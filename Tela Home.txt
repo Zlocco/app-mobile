@@ -1,0 +1,144 @@
+import { StatusBar } from 'expo-status-bar';
+import { useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+
+export default function App() {
+
+  const [icones, setIcones] = useState([
+    { nome: 'Meu ciclo', key: 2, icon: <FontAwesome name="circle-o-notch" size={52} color="white" /> },
+    { nome: 'Calendário Menstrual', key: 3, icon: <Ionicons name="calendar" size={50} color="white" /> },
+    { nome: 'Conteúdo', key: 4, icon: <MaterialCommunityIcons name="book-open-page-variant-outline" size={52} color="white" /> },
+    { nome: 'Opcões', key: 5, icon: <Ionicons name="options" size={52} color="white" /> },
+  ])
+
+  const [perfil, setPerfil] = useState([
+    { nome: 'Meu Perfil', key: 1, icon: <Ionicons name="person" size={50} color="white" /> },
+  ])
+
+  return (
+
+    <View style={styles.container}>
+
+      <View style={styles.logo}>
+        <View>
+          <MaterialCommunityIcons name="flower-tulip" size={60} color="#DDA0DD" />
+        </View>
+        <View>
+          <Text style={styles.textologo}> CLOVER </Text>
+        </View>
+      </View>
+
+      <FlatList
+          bounces={false}
+          numColumns={2}
+          data={icones}
+          keyExtractor={(item) => item.key}
+          renderItem={({ item }) => (
+            <TouchableOpacity>
+              <View style={styles.item2}>
+                <View style={styles.icon2}>
+                  {item.icon}
+                </View>
+                <Text style={styles.texto}> {item.nome} </Text>
+              </View>
+            </TouchableOpacity>
+          )} />
+
+  <View style={styles.lista}>
+        <FlatList
+          bounces={false}
+          numColumns={1}
+          data={perfil}
+          keyExtractor={(item) => item.key}
+          renderItem={({ item }) => (
+            <TouchableOpacity>
+              <View style={styles.item}>
+                <View style={styles.icon}>
+                  {item.icon}
+                </View>
+                <Text style={styles.texto}> {item.nome} </Text>
+              </View>
+            </TouchableOpacity>
+          )} />
+
+      </View>
+
+      <StatusBar style='auto' />
+    </View>
+
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f4f4f4',
+  },
+  lista: {
+    marginBottom: 40,
+  },
+  texto: {
+    fontSize: 19,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    color: 'white'
+  },
+  item: {
+    flex: 1,
+    fontSize: 21,
+    backgroundColor: '#DDA0DD',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    margin: 10,
+    padding: 30,
+    borderRadius: 10,
+  
+  },
+  item2: {
+    flex: 1,
+    backgroundColor: '#DDA0DD',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    margin: 5,
+    marginVertical: 0,
+    padding: 18,
+    borderRadius: 10,
+    height: 175,
+    width: 160,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    marginLeft: 11,
+    marginTop: 18,
+  },
+  icon: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 8,
+    
+  },
+  icon2: {
+    marginTop: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  textologo: {
+    fontSize: 45,
+    color: '#DDA0DD',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
+  logo: {
+    flexDirection: 'row',
+    marginTop: 50,
+    padding: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});

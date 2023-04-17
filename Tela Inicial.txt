@@ -1,0 +1,92 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { Button, StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.caixa}>
+        <MaterialCommunityIcons name="flower-tulip" size={55} color="white" />
+        <Text style={styles.texto}>CLOVER</Text>
+      </View>
+      <Text style={styles.texto1}>Fique ligada na sua saúde</Text>
+      <Text style={styles.texto2}>Ao registrar seus sintomas no aplicativo, o Clover consegue indentificar possíveis desequilíbrios no seu corpo e avisar quando você deve consultar um médico. </Text>
+
+      <View style={styles.caixa2}>
+        <View style={styles.botao}>
+          <Button title="Tenho uma conta" color='#DDA0DD' /></View>
+        <View>
+          <Button title="Comece agora" color='#DDA0DD' /></View>
+      </View>
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#DDA0DD',
+  },
+
+  texto: {
+    fontSize: 45,
+    fontWeight: "bold",
+    fontStyle: 'italic',
+    color: 'white',
+    marginLeft: 7,
+
+  },
+
+  caixa: {
+    marginTop: 80,
+    flex: 1,
+    flexDirection: 'row',
+
+  },
+
+  texto1: {
+    fontSize: 27,
+    fontWeight: "bold",
+    color: 'white',
+    textAlign: 'center',
+    fontStyle: 'italic',
+    marginBottom: 10,
+  },
+
+  texto2: {
+    padding: 21,
+    textAlign: 'justify',
+    fontSize: 17,
+    fontWeight: "bold",
+    color: 'white',
+    marginBottom: 160,
+  },
+
+  caixa2: {
+
+
+    paddingHorizontal: 140,
+    paddingVertical: 15,
+    backgroundColor: 'white',
+
+
+  },
+
+  botao: {
+    width: 200,
+    height: 70,
+    marginTop: 8,
+   
+  },
+
+  botao2: {
+
+
+  }
+
+
+});

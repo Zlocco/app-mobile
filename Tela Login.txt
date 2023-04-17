@@ -1,0 +1,106 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons'
+import { FontAwesome5 } from '@expo/vector-icons';
+
+export default function App() {
+
+  return (
+
+    <View style={styles.container}>
+
+  <View style={styles.logo}>
+  <MaterialCommunityIcons name="flower-tulip" size={65} color="#DDA0DD" />
+      <Text style={styles.text}>CLOVER</Text>
+      </View>
+
+      <View style={styles.caixa}>
+        <View style={styles.icons}>
+          <MaterialIcons name="email" size={20} color="#DDA0DD" />
+        </View>
+        <TextInput
+          multiline
+          style={styles.textInput}
+          placeholder='     Digite seu email' />
+      </View>
+
+      <View style={styles.caixa}>
+        <View style={styles.icons}>
+          <FontAwesome5 name="key" size={20} color="#DDA0DD" />
+        </View>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite sua senha' />
+      </View>
+
+      <View style={styles.botao}>
+        <Button
+          title="Login"
+          color="#DDA0DD"
+        />
+      </View>
+
+      <View style={styles.caixa2}></View>
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  text: {
+    fontSize: 45,
+    padding: 10,
+    color: '#DDA0DD',
+    fontWeight: "bold",
+    fontStyle: 'italic',
+  },
+  botao: {
+    marginTop: 20,
+    width: '40%',
+  },
+
+  caixa: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    width: '75%',
+    paddingVertical: 5,
+    borderRadius: 7,
+    opacity: 0.4,
+    margin: 6,
+    marginTop: 14,
+
+  },
+
+  icons: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 10,
+    paddingRight: 6,
+  },
+
+  caixa2: {
+    marginTop: 170,
+    paddingHorizontal: 180,
+    paddingVertical: 80,
+    backgroundColor: '#DDA0DD',
+
+  },
+
+  logo: {
+
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 130,
+  }
+
+  });

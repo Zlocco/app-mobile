@@ -1,0 +1,223 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons'
+import { FontAwesome5 } from '@expo/vector-icons';
+
+export default function App() {
+
+
+  return (
+
+    <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={styles.container}>
+  <View style={styles.logo}>
+  <MaterialCommunityIcons name="flower-tulip" size={65} color="#DDA0DD" />
+      <Text style={styles.text}>CLOVER</Text>
+      </View>
+    <Text style={styles.email}>Email</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          //multiline
+          style={styles.textInput}
+          placeholder='   Digite seu email' />
+      </View>
+
+    <Text style={styles.senha}>Senha</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite sua senha' />
+      </View>
+
+      <Text style={styles.cpf}>CPF</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite seu CPF' />
+      </View>
+
+      <Text style={styles.data}>Data de nascimento</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite sua data de nascimento' />
+      </View>
+
+      <Text style={styles.telefone}>Telefone</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite seu telefone' />
+      </View>
+
+      <Text style={styles.endereco}>Endereço</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite seu endereço' />
+      </View>
+
+      <Text style={styles.nome}>Nome</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite seu Nome' />
+      </View>
+
+      <Text style={styles.sobrenome}>Sobrenome</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite seu sobrenome' />
+      </View>
+
+      <Text style={styles.peso}>Peso</Text>
+      <View style={styles.caixa}>
+        <TextInput
+          style={styles.textInput}
+          placeholder='     Digite seu peso' />
+      </View>
+
+      <View style={styles.botao}>
+        <Button
+          title="Cadastrar"
+          color="#DDA0DD"
+        />
+      </View>
+  
+      
+      <StatusBar style="auto" />
+    </View>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  text: {
+    fontSize: 45,
+    padding: 10,
+    color: '#DDA0DD',
+    fontWeight: "bold",
+    fontStyle: 'italic',
+  },
+  botao: {
+    marginTop: 20,
+    width: '40%',
+    
+  },
+
+  caixa: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    width: '75%',
+    paddingVertical: 5,
+    borderRadius: 7,
+    opacity: 0.4,
+    margin: 6,
+    marginTop: 5,
+
+  },
+
+  icons: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: 10,
+    paddingRight: 6,
+  },
+
+  caixa2: {
+    marginTop: 0,
+    paddingHorizontal: 180,
+    paddingVertical: 80,
+    backgroundColor: '#DDA0DD',
+
+  },
+
+  logo: {
+
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 50,
+  },
+
+  email: {
+    marginTop: 20,
+    marginRight: 220,
+    fontSize: 17,
+    padding: 5,
+    color: '#DDA0DD',
+
+  },
+
+  cpf: {
+    fontSize: 17,
+    marginRight: 233,
+    padding: 5,
+    color: '#DDA0DD',
+  },
+
+  data: {
+    fontSize: 17,
+    padding: 5,
+    color: '#DDA0DD',
+    marginRight: 115,
+  },
+
+  telefone: {
+    fontSize: 17,
+    padding: 5,
+    color: '#DDA0DD',
+    marginRight: 205,
+
+  },
+
+  senha: {
+      fontSize: 17,
+      padding: 5,
+      color: '#DDA0DD',
+      marginRight: 220,
+  },
+
+  nome: {
+    fontSize: 17,
+      padding: 5,
+      color: '#DDA0DD',
+      marginRight: 220,
+
+  },
+
+  sobrenome: {
+    fontSize: 17,
+      padding: 5,
+      color: '#DDA0DD',
+      marginRight: 182,
+
+  },
+
+  peso: {
+    fontSize: 17,
+      padding: 5,
+      color: '#DDA0DD',
+      marginRight: 232,
+
+  },
+
+  endereco: {
+    fontSize: 17,
+    padding: 5,
+    color: '#DDA0DD',
+    marginRight: 199,
+
+  }
+
+
+  });
